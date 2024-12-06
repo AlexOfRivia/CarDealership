@@ -1,8 +1,14 @@
 from car import car #Importing the class file
 
-# def addCar(inputList):
-#     newCar = car()
-#     inputList.append(newCar)
+def addCar(inputList):
+    newCar = car()
+    inputList.append(newCar)
 
-myCar = car()
-myCar.printCarDetails()
+def printAllCars(inputList):
+    for car in inputList:
+        car.printCarDetails()
+
+carList = []
+
+addCar(carList)
+printAllCars(carList)

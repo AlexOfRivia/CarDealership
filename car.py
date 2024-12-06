@@ -1,6 +1,6 @@
 class car:
 
-    def __init__(self): #Setting car paremeters
+    def __init__(self): #Initializing new car object
         self.carBrand = input("Enter car brand: ")
         self.carModel = input("Enter car model: ")
         self.engine = input("Enter engine: ")
