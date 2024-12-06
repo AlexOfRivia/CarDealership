@@ -5,11 +5,15 @@ def addCar(inputList): #Adding a new car to the list
     inputList.append(newCar)
 
 def printAllCars(inputList): #Displaying all cars in the list
+    i=1
     for car in inputList:
+        print(f"\n{i}: ")
         car.printCarDetails()
+        i+=1
 
 def removeCar(inputList): #Removing the selected car from list
     print()
+    #Print all cars and ask which one to remove, then remove as usual
 
 def menu():
         strs = ('\n1. Add New Car\n'
@@ -37,7 +41,9 @@ while True: #use while True
         addCar(carList)
     elif choice == 2:
         printAllCars(carList)
-    # elif choice == 3:
-    # elif choice == 4:
+    #elif choice == 3:
+        
+    elif choice == 4:
+        removeCar(carList)
     elif choice == 5:
         break
