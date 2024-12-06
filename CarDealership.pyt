@@ -8,6 +8,9 @@ def printAllCars(inputList): #Displaying all cars in the list
     for car in inputList:
         car.printCarDetails()
 
+def removeCar(inputList): #Removing the selected car from list
+    print()
+
 def menu():
         strs = ('\n1. Add New Car\n'
                 '2. Show All Cars\n'
