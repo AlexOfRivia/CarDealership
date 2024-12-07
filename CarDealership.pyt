@@ -17,6 +17,13 @@ def removeCar(inputList): #Removing the selected car from list
     pos-=1 #Decrementing, so that it matches the index
     inputList.pop(pos) #Removing the indexed element
 
+def editCar(inputList): #Editing the selected  car from list
+    printAllCars(inputList) #Printing all cars in list
+    pos = int(input("Which Car Do You Wish To Edit: ")) #Inputing the position of the car
+    pos-=1 #Decrementing to match the index
+    newCar = car()
+    inputList[pos] = newCar
+
 def menu():
         strs = ('\n1. Add New Car\n'
                 '2. Show All Cars\n'
@@ -43,8 +50,8 @@ while True: #use while True
         addCar(carList)
     elif choice == 2:
         printAllCars(carList)
-    #elif choice == 3:
-        
+    elif choice == 3:
+        editCar(carList)
     elif choice == 4:
         removeCar(carList)
     elif choice == 5:

@@ -7,9 +7,6 @@ class car:
         self.year = input("Enter production year: ")
         self.mileage = input("Enter mileage: ")
 
-    def editCar(self): #Editing a chosen car
-        print("")
-
     def printCarDetails(self): #Printing car details
         print(f"\nCar brand: {self.carBrand}")
         print(f"Car Model: {self.carModel}")
