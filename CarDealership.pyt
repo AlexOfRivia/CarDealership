@@ -12,8 +12,10 @@ def printAllCars(inputList): #Displaying all cars in the list
         i+=1
 
 def removeCar(inputList): #Removing the selected car from list
-    print()
-    #Print all cars and ask which one to remove, then remove as usual
+    printAllCars(inputList) #Printing all cars in list
+    pos = int(input("Which Car Do You Wish To Remove: ")) #Inputing the position of the car
+    pos-=1 #Decrementing, so that it matches the index
+    inputList.pop(pos) #Removing the indexed element
 
 def menu():
         strs = ('\n1. Add New Car\n'
