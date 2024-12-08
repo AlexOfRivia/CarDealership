@@ -1,7 +1,7 @@
 from car import car #Importing the class file
 
 def addCar(inputList): #Adding a new car to the list
-    newCar = car()
+    newCar = car(True)
     inputList.append(newCar)
 
 def printAllCars(inputList): #Displaying all cars in the list
@@ -30,20 +30,22 @@ def editCar(inputList): #Editing the selected  car from list
         printAllCars(inputList) #Printing all cars in list
         pos = int(input("Which Car Do You Wish To Edit: ")) #Inputing the position of the car
         pos-=1 #Decrementing to match the index
-        newCar = car()
+        newCar = car(True)
         inputList[pos] = newCar
 
 def loadFromFile(inputList):
     fileName = input("Enter file name to load from: ")
     with open(fileName, 'r') as inputFile:
         for line in inputFile:
-            textList = [(line.split(";"))]
-            try:
-                newCar = car().loadCarInfo(textList[0],textList[1],textList[2],textList[3],textList[4])
-                inputList.append(newCar)
-            except IndexError:
-                print("Error: The file does not have enough lines.")
-        
+            textList = (line.strip().split(";"))
+            if len(textList) == 5:  # Check if the line has 5 elements
+                try:
+                    newCar = car(False)
+                    newCar.loadCarInfo(*textList)  # Unpack the list into arguments
+                    inputList.append(newCar)
+                except IndexError:
+                    print("Error: The file does not have enough lines.")
+            
 
 def menu():
         strs = ('\n1. Add New Car\n'
