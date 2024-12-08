@@ -7,6 +7,13 @@ class car:
         self.year = input("Enter production year: ")
         self.mileage = input("Enter mileage: ")
 
+    def loadCarInfo(self, brand, model, engine, year, mileage):
+        self.carBrand = brand
+        self.carModel = model
+        self.engine = engine
+        self.year = year
+        self.mileage = mileage
+
     def printCarDetails(self): #Printing car details
         print(f"\nCar brand: {self.carBrand}")
         print(f"Car Model: {self.carModel}")
